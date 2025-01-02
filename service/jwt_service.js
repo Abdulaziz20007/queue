@@ -6,7 +6,7 @@ const generateTokens = (payload) => {
     expiresIn: config.get("jwt_access_token_time"),
   });
   const refreshToken = jwt.sign(payload, config.get("jwt_secret"), {
-    expiresIn: config.get("jwt_refresh_token_time"), 
+    expiresIn: config.get("jwt_refresh_token_time"),
   });
   return { tokens: { accessToken, refreshToken } };
 };

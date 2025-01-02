@@ -9,11 +9,13 @@ const {
 } = require("../controllers/queue.controller");
 const customerPolice = require("../polices/customer_police");
 const adminPolice = require("../polices/admin_police");
+const operatorPolice = require("../polices/operator_police");
+
 router.get("/", getAll);
 router.get("/:id", getById);
 
 router.post("/", customerPolice, create);
-router.put("/:id", adminPolice, updateById);
+router.put("/:id", [adminPolice, operatorPolice], updateById);
 router.delete("/:id", [customerPolice, adminPolice], deleteById);
 
 module.exports = router;
