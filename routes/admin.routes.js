@@ -8,6 +8,7 @@ const {
   logout,
   updateById,
   deleteById,
+  refreshToken,
 } = require("../controllers/admin.controller");
 const adminPolice = require("../polices/admin_police");
 
@@ -19,5 +20,6 @@ router.post("/", create);
 router.put("/:id", adminPolice, updateById);
 router.delete("/:id", adminPolice, deleteById);
 router.post("/logout", adminPolice, logout);
+router.post("/refresh", adminPolice, refreshToken);
 
 module.exports = router;

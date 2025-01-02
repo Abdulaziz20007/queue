@@ -917,6 +917,26 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "Refresh Admin Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:4411/api/admin/refresh",
+              "protocol": "http",
+              "host": ["shaxsiy", "site"],
+              "port": "4411",
+              "path": ["api", "admin", "refresh"]
+            }
+          },
+          "response": []
         }
       ]
     }

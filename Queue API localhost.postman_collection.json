@@ -1007,6 +1007,26 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "Refresh Admin Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3030/api/admin/refresh",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3030",
+              "path": ["api", "admin", "refresh"]
+            }
+          },
+          "response": []
         }
       ]
     }

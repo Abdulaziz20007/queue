@@ -111,6 +111,32 @@ const logout = async (req, res) => {
   }
 };
 
+const refreshToken = async (req, res) => {
+  try {
+    const refreshToken = req.cookies.refreshToken;
+    if (!refreshToken)
+      return res.status(400).send({ message: "Refresh token topilmadi" });
+
+    const admin = await Admin.findById(refreshToken);
+    if (!admin) return res.status(400).send({ message: "Admin topilmadi" });
+
+    const tokens = generateTokens({
+      id: admin._id,
+      login: admin.login,
+      role: admin.role,
+    });
+
+    res.cookie("refreshToken", tokens.refreshToken, {
+      httpOnly: true,
+      maxAge: config.get("jwt_refresh_token_time"),
+    });
+
+    res.status(200).send({ message: "Done", accessToken: tokens.accessToken });
+  } catch (error) {
+    errorHandler(error, res);
+  }
+};
+
 const updateById = async (req, res) => {
   try {
     const { error, value } = AdminValidation.validate(req.body);
@@ -154,6 +180,7 @@ module.exports = {
   create,
   login,
   logout,
+  refreshToken,
   updateById,
   deleteById,
 };
