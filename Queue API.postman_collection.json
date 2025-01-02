@@ -1,1072 +1,860 @@
 {
-	"info": {
-		"_postman_id": "f2471b8a-572a-4ccc-9dfc-b99cfede7a8a",
-		"name": "Queue API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39646185"
-	},
-	"item": [
-		{
-			"name": "Customer",
-			"item": [
-				{
-					"name": "Register Customer",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"John\",\n    \"surname\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"991234567\",\n    \"password\": \"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/customer/register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login Customer",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/customer/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Verify Customer",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/customer/verify/abc123",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"verify",
-								"abc123"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Resend Verification",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"john@example.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/customer/resend",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"resend"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Customers",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/customer",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Customer By ID",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/customer/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Customer",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"John Updated\",\n    \"surname\": \"Doe Updated\",\n    \"email\": \"john.updated@example.com\",\n    \"phone\": \"991234567\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/customer/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Customer",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/customer/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logout Customer",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/customer/logout",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh Token",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/customer/refresh",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"customer",
-								"refresh"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Department",
-			"item": [
-				{
-					"name": "Get All Departments",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/department",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"department"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Department By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/department/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"department",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Department",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"IT Department\",\n    \"description\": \"Information Technology\",\n    \"letter\": \"I\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/department",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"department"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Department",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Updated IT Department\",\n    \"description\": \"Updated Information Technology\",\n    \"letter\": \"U\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/department/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"department",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Department",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/department/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"department",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Service",
-			"item": [
-				{
-					"name": "Get All Services",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/service",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"service"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Service By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/service/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"service",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Service",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Technical Support\",\n    \"description\": \"IT Support Service\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"average_service_time\": 15\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/service",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"service"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Service",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Updated Technical Support\",\n    \"description\": \"Updated IT Support Service\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"average_service_time\": 20\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/service/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"service",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Service",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/service/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"service",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Queue",
-			"item": [
-				{
-					"name": "Get All Queues",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/queue",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"queue"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Queue By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3030/api/queue/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"queue",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Queue",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"service\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"operator\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"customer\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"ticket_number\": \"A001\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/queue",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"queue"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Queue",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"status\": \"completed\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/queue/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"queue",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Queue",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/queue/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"queue",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Operator",
-			"item": [
-				{
-					"name": "Get All Operators",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/operator",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"operator"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Operator By ID",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/operator/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"operator",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Operator",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Jane\",\n    \"surname\": \"Smith\",\n    \"login\": \"jane.smith\",\n    \"password\": \"password123\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/operator",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"operator"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Operator",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Jane Updated\",\n    \"surname\": \"Smith Updated\",\n    \"login\": \"jane.smith.updated\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/operator/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"operator",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Operator",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/operator/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"operator",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Admin",
-			"item": [
-				{
-					"name": "Login Admin",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"login\": \"admin\",\n    \"password\": \"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/admin/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Admins",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/admin",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Admin By ID",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/admin/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Admin",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"John\",\n    \"surname\": \"Admin\",\n    \"login\": \"john.admin\",\n    \"password\": \"password123\",\n    \"role\": \"admin\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/admin",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Admin",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"John Updated\",\n    \"surname\": \"Admin Updated\",\n    \"login\": \"john.admin.updated\",\n    \"role\": \"super_admin\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3030/api/admin/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Admin",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/admin/65f1a2b3c4d5e6f7g8h9i0j1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin",
-								"65f1a2b3c4d5e6f7g8h9i0j1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logout Admin",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3030/api/admin/logout",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3030",
-							"path": [
-								"api",
-								"admin",
-								"logout"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "f2471b8a-572a-4ccc-9dfc-b99cfede7a8a",
+    "name": "Queue API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39646185"
+  },
+  "item": [
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Register Customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John\",\n    \"surname\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"991234567\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/register",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/login",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify Customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/verify/abc123",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "verify", "abc123"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resend Verification",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"john@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/resend",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "resend"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Customer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Updated\",\n    \"surname\": \"Doe Updated\",\n    \"email\": \"john.updated@example.com\",\n    \"phone\": \"991234567\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Customer",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/logout",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "logout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/customer/refresh",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "customer", "refresh"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Department",
+      "item": [
+        {
+          "name": "Get All Departments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/department",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "department"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Department By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/department/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "department", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Department",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"IT Department\",\n    \"description\": \"Information Technology\",\n    \"letter\": \"I\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/department",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "department"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Department",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated IT Department\",\n    \"description\": \"Updated Information Technology\",\n    \"letter\": \"U\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/department/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "department", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Department",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/department/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "department", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Service",
+      "item": [
+        {
+          "name": "Get All Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/service",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "service"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Service By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/service/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "service", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Service",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Technical Support\",\n    \"description\": \"IT Support Service\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"average_service_time\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/service",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "service"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Service",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Technical Support\",\n    \"description\": \"Updated IT Support Service\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"average_service_time\": 20\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/service/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "service", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Service",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/service/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "service", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Queue",
+      "item": [
+        {
+          "name": "Get All Queues",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/queue",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "queue"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Queue By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/queue/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "queue", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Queue",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"service\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"operator\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"customer\": \"65f1a2b3c4d5e6f7g8h9i0j1\",\n    \"ticket_number\": \"A001\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/queue",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "queue"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Queue",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"completed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/queue/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "queue", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Queue",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/queue/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "queue", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Operator",
+      "item": [
+        {
+          "name": "Get All Operators",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/operator",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "operator"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Operator By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/operator/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "operator", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Operator",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Jane\",\n    \"surname\": \"Smith\",\n    \"login\": \"jane.smith\",\n    \"password\": \"password123\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/operator",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "operator"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Operator",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Jane Updated\",\n    \"surname\": \"Smith Updated\",\n    \"login\": \"jane.smith.updated\",\n    \"department\": \"65f1a2b3c4d5e6f7g8h9i0j1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/operator/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "operator", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Operator",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/operator/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "operator", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"login\": \"admin\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin/login",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Admins",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Admin By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John\",\n    \"surname\": \"Admin\",\n    \"login\": \"john.admin\",\n    \"password\": \"password123\",\n    \"role\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Admin",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Updated\",\n    \"surname\": \"Admin Updated\",\n    \"login\": \"john.admin.updated\",\n    \"role\": \"super_admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Admin",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin/65f1a2b3c4d5e6f7g8h9i0j1",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin", "65f1a2b3c4d5e6f7g8h9i0j1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+              }
+            ],
+            "url": {
+              "raw": "http://shaxsiy.site:3030/api/admin/logout",
+              "protocol": "http",
+              "host": ["shaxsiy.site"],
+              "port": "3030",
+              "path": ["api", "admin", "logout"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
